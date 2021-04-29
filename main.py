@@ -6,12 +6,13 @@ from calculs import *
 
 enable_docking(shift_only = False,dock_space=True)
 
+add_additional_font("Fonts/Open_Sans/OpenSans-SemiBold.ttf", 20)
+#add_additional_font("Fonts/Roboto/Roboto-Regular.ttf", 20)
+
 itp,t,x,v = calcul_vitesse_piston(0.3,1000,0.5)
 v = v[:itp]
 x = x[:itp]
 t = t[:itp]
-
-set_global_font_scale(1.2)
 
 def Recalculate_vitesse(sender,data):
     global v,t,x
@@ -97,6 +98,6 @@ set_render_callback(Update_table)
 
 #show_demo()
 #show_documentation()
-show_debug()
+#show_debug()
 show_logger()
 start_dearpygui(primary_window = "Main")
